@@ -1,0 +1,42 @@
+# CLI Commands for Data Engineering Bootcamp – Day 1
+
+# Terminal Navigation
+pwd                     # Print the current directory
+ls                      # List files in the current directory
+cd ..                   # Move one directory up
+cd <folder>             # Move into a specific folder
+
+# File and Directory Management
+mkdir bootcamp_demo     # Create a new directory named bootcamp_demo
+touch notes.txt         # Create an empty file called notes.txt
+ls -l                   # List files with detailed information
+ls -a                   # List all files including hidden ones
+
+# File Editing and Viewing
+echo "Hello CLI!" > notes.txt     # Write text to a file (overwrites existing content)
+echo "Second line" >> notes.txt   # Append text to an existing file
+cat notes.txt                     # Display contents of the file
+nano notes.txt                    # Open file in nano editor (basic terminal editor)
+
+# System Utilities
+clear                   # Clear the terminal screen
+history                 # Show the list of previously used commands
+whoami                  # Show the current system username
+
+# CSV Processing and Data Utilities
+sort data.csv | uniq > temp.csv && mv temp.csv data.csv
+                         # Remove duplicate lines from CSV and overwrite the original file
+head data.csv           # Show first 10 lines of the file
+tail -n 20 data.csv     # Show last 20 lines of the file
+wc -l data.csv          # Count number of lines in the file
+
+# Downloading Files and Permissions
+curl https://example.com/data.csv -o data.csv
+                         # Download a file using URL
+chmod +x script.sh      # Make a shell script executable
+./script.sh             # Run the script
+
+# Text Search and Deduplication
+grep "error" logs.txt   # Search for 'error' in a text/log file
+sort file.txt | uniq    # Sort and remove duplicate lines from file.txt
+(head -n 1 data.csv && tail -n +2 data.csv | sort | uniq) > temp.csv && mv temp.csv data.csv  #deduplication without loosing the header from the top row
