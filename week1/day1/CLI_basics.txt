@@ -40,3 +40,7 @@ chmod +x script.sh      # Make a shell script executable
 grep "error" logs.txt   # Search for 'error' in a text/log file
 sort file.txt | uniq    # Sort and remove duplicate lines from file.txt
 (head -n 1 data.csv && tail -n +2 data.csv | sort | uniq) > temp.csv && mv temp.csv data.csv  #deduplication without loosing the header from the top row
+
+#basic docker command to start postgresql service (must run from the same location where you keep the file docker-compose.yml)
+docker compose up -d  #brings the postgresql databaes service up and running
+docker compose down  #brings the service down 
