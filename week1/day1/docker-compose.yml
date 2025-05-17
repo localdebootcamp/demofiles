@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: bootcamp_postgres
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: studentpass
+      POSTGRES_DB: bootcamp_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
