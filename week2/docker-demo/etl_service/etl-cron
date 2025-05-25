@@ -1,0 +1,2 @@
+#run etl.py at 6:00 AM every day
+0 6 * * *  root python /app/etl.py >> /var/log/etl.log 2>&1

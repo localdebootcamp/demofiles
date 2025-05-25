@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  etl:
+    build: .
+    environment:
+      -  TZ=Asia/kathmandu
+      -  DB_HOST=db
+      -  DB_USER=${DB_USER}
+      -  DB_PASS=${DB_PASS}
+      -  DB_NAME=db_name
+    depends_on:
+      - db
+    volumes:
+      - ./etl-cron:/etc/cron.d/etl-cron:ro
+      -  logs:/var/log
+    commands: ["cron","-f"]
+    restart: on-failure
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USERR: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: db_name
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:
+  logs:
