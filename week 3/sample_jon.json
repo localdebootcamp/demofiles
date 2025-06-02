@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Alice Johnson",
+    "age": 28,
+    "email": "alice.johnson@example.com",
+    "balance": 45.67
+  },
+  {
+    "name": "Bob Smith",
+    "age": 35,
+    "email": "bob.smith@example.com",
+    "balance": 45.67
+  },
+  {
+    "name": "Charlie Lee",
+    "age": 22,
+    "email": "charlie.lee@example.com",
+    "balance": 45.67
+  }
+]
